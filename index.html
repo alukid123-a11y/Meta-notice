@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Account Notice — Example</title>
+  <<link rel="stylesheet" href="style">
+  <style>
+    :root{
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --brand: #2563eb;
+      --accent: #f87171; /* red-400 */
+      --border: #e2e8f0;
+      --shadow: 0 10px 25px rgba(2,8,23,.08);
+      --radius: 20px;
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;n
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(820px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 4vw, 48px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      user-select: none;
+    }
+    .brand-mark {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: var(--brand);
+      display: grid; place-items: center;
+      color: white;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .brand-name { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
+
+    .notice {
+      font-size: clamp(22px, 2.8vw, 30px);
+      line-height: 1.25;
+      margin: 8px 0 14px 0;
+    }
+    .notice .highlight {
+      background: var(--accent);
+      color: white;
+      padding: 2px 10px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
+    p { color: var(--muted); font-size: 16px; line-height: 1.65; margin: 0 0 12px 0; }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+      background: #fff7ed; /* orange-50 */
+      border: 1px solid #fed7aa; /* orange-200 */
+      color: #7c2d12;
+      padding: 12px 14px;
+      border-radius: 12px;
+      margin: 18px 0 8px;
+      font-size: 15px;
+    }
+
+    .muted { font-size: 14px; color: #64748b; }
+    .footer { margin-top: 22px; font-size: 13px; color: #94a3b8; }
+
+    .divider { height: 1px; background: var(--border); margin: 18px 0; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+    .btn {
+      appearance: none; border: 0; cursor: pointer; text-decoration: none;
+      border-radius: 12px; padding: 10px 14px; font-weight: 700; font-size: 14px;
+    }
+    .btn.primary { background: var(--brand); color: white; }
+    .btn.ghost { background: transparent; color: var(--brand); border: 1px solid var(--border); }
+
+    /* Print friendly */
+    @media print {
+      body { background: white; padding: 0; }
+      .card { box-shadow: none; border: 1px solid #cbd5e1; }
+      .btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="notice-title">
+    <header class="brand" aria-label="Brand">
+<div class="brand-logo">
+  <img src="/Picsart_25-09-06_12-34-22-297.png" alt="Logo">
+</div>
+
+<style>
+  .brand-logo {
+    width: 24px;   /* smaller width */
+    height: 24px;  /* smaller height */
+    border-radius: 6px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+  .brand-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+</style>
+
+      <div class="brand-name">Network Services</div>
+    </header>
+
+    <h1 id="notice-title" class="notice">
+      <span class="highlight">Your account has been flagged</span>
+      for suspicious and potentially fraudulent activity that violates the Meta Community Standards. Our system has placed your profile under review.
+    </h1>
+
+    <p>
+      This notice is meant to inform you—not to threaten. Reviews like this help keep our community safe and fair for everyone.
+    </p>
+
+    <div class="callout" role="status" aria-live="polite">
+      <div aria-hidden="true">⚠️</div>
+      <div>
+        <strong>Please note:</strong> If similar activity continues, your account may face limited features or temporary restrictions while we investigate. You can avoid any limits by following the steps below.
+      </div>
+    </div>
+
+    <div class="divider" role="separator" aria-hidden="true"></div>
+
+    <p><strong>What you can do now</strong></p>
+    <ul class="muted" style="margin-top:8px; padding-left: 18px;">
+      <li>Review our Community Guidelines and remove any content that might conflict with them.</li>
+      <li>Turn on two‑factor authentication and update your password if you suspect unauthorized access.</li>
+      <li>Contact Support if you believe this was a mistake. Our team will take another look.</li>
+    </ul>
+
+    <div class="actions" aria-label="Actions">
+      <a class="btn primary" href="https://transparency.meta.com/policies/community-standards/?utm_source=chatgpt.com">Review Guidelines</a>
+      <a class="btn ghost" href="https://m.facebook.com/help/2374002556073992/?helpref=search&query=fraud&search_session_id=44daa75050407cecf4d038ae3ec5fbc6&sr=3">Contact Support</a>
+    </div>
+
+    <p class="footer" id="footer-text">
+      © <span id="year"></span> Example Platform. This is a sample notice for education/testing. Do not use to impersonate any company or mislead users.
+    </p>
+  </main>
+
+  <script>
+    // Minimal JS: set the year and make the footer text accessible without hard-coding dates.
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
